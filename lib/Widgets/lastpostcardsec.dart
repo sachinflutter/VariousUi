@@ -31,37 +31,45 @@ class lastPostCard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Container(
-            width: 200,
-            height: 40,
-            child: headerButton(
-                buttontext: "Like",
-                buttonAction: () {
-                  print("Like this post");
-                },
-                color: Colors.grey,
-                buttonIcon: Icons.thumb_up_alt_outlined)),
-        Container(
-            padding: EdgeInsets.all(5),
-            width: 200,
-            height: 40,
-            child: headerButton(
-                buttontext: "Comment",
-                buttonAction: () {
-                  print("Comments started");
-                },
-                color: Colors.grey,
-                buttonIcon: Icons.message_outlined)),
-        Container(
-            width: 200,
-            height: 40,
-            child: headerButton(
-                buttontext: "Share",
-                buttonAction: () {
-                  print("Share post");
-                },
-                color: Colors.grey,
-                buttonIcon: Icons.share_outlined)),
+        Expanded(
+          flex: 1,
+          child: Container(
+              width: 100,
+              height: 40,
+              child: headerButton(
+                  buttontext: "Like",
+                  buttonAction: () {
+                    print("Like this post");
+                  },
+                  color: Colors.grey,
+                  buttonIcon: Icons.thumb_up_alt_outlined)),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+              width: 100,
+              height: 40,
+              child: headerButton(
+                  buttontext: "Comment",
+                  buttonAction: () {
+                    print("Comments started");
+                  },
+                  color: Colors.grey,
+                  buttonIcon: Icons.message_outlined)),
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+              width: 300,
+              height: 40,
+              child: headerButton(
+                  buttontext: "Share",
+                  buttonAction: () {
+                    print("Share post");
+                  },
+                  color: Colors.grey,
+                  buttonIcon: Icons.share_outlined)),
+        ),
       ],
     );
   }

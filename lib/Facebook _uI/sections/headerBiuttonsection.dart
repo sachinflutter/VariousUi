@@ -28,41 +28,49 @@ class HeaderButtonSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Container(
-            width: 200,
-            height: 40,
-            child: headerButton(
-                buttontext: "Live",
-                buttonAction: () {
-                  print("Live Started");
-                },
-                color: Colors.red,
-                buttonIcon: Icons.video_call)),
-        Container(
-            padding: EdgeInsets.all(5),
-            width: 200,
-            height: 40,
-            child: headerButton(
-                buttontext: "Photo",
-                buttonAction: () {
-                  print("Photos Clicked");
-                },
-                color: Colors.green,
-                buttonIcon: Icons.photo_sharp)),
-        Container(
-            width: 200,
-            height: 40,
-            child: headerButton(
-                buttontext: "Room",
-                buttonAction: () {
-                  print("Room selected");
-                },
-                color: Colors.indigo,
-                buttonIcon: Icons.video_call)),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+                width: 100,
+                height: 40,
+                child: headerButton(
+                    buttontext: "Live",
+                    buttonAction: () {
+                      print("Live Started");
+                    },
+                    color: Colors.red,
+                    buttonIcon: Icons.video_call)),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+                width: 100,
+                height: 40,
+                child: headerButton(
+                    buttontext: "Photo",
+                    buttonAction: () {
+                      print("Photos Clicked");
+                    },
+                    color: Colors.green,
+                    buttonIcon: Icons.photo_sharp)),
+          ),
+          Container(
+              width: 100,
+              height: 40,
+              child: headerButton(
+                  buttontext: "Room",
+                  buttonAction: () {
+                    print("Room selected");
+                  },
+                  color: Colors.indigo,
+                  buttonIcon: Icons.video_call)),
+        ],
+      ),
     );
   }
 }
